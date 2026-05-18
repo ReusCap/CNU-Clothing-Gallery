@@ -56,7 +56,7 @@ const Main = () => {
           <LinkList>
             <LinkItem>
               <a
-                href="https://www.instagram.com/"
+                href="https://www.instagram.com/cnu_c.a.t/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
