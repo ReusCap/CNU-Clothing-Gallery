@@ -19,10 +19,10 @@ const Main = () => {
           <SectionTitle>졸업전시</SectionTitle>
           <LinkList>
             <LinkItem>
-              <a href="/exhibition/2025">2025 전남대학교 의류학과 졸업전시</a>
+              <a href="https://cnu-clothing-department-graduation-work.vercel.app/">2025 전남대학교 의류학과 졸업전시</a>
             </LinkItem>
             <LinkItem>
-              <a href="/exhibition/2026">2026 전남대학교 의류학과 졸업전시</a>
+              <a href="https://cnucloth-2026.vercel.app/">2026 전남대학교 의류학과 졸업전시</a>
             </LinkItem>
           </LinkList>
         </Section>
