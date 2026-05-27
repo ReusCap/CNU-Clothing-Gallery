@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import JnuLogo from '../../assets/image/전남대학교 로고.svg';
 import { COLORS } from '../../constants/color';
 
@@ -72,6 +72,17 @@ const Main = () => {
 
 export default Main;
 
+const floatUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 const Container = styled.main`
   width: 100%;
   min-height: 100vh;
@@ -96,6 +107,7 @@ const HeaderSection = styled.header`
   align-items: center;
   text-align: center;
   margin-bottom: 96px;
+  animation: ${floatUp} 0.7s ease-out both;
 
   @media (max-width: 768px) {
     margin-bottom: 64px;
@@ -139,6 +151,17 @@ const Subtitle = styled.p`
 
 const Section = styled.section`
   margin-bottom: 72px;
+  animation: ${floatUp} 0.7s ease-out both;
+
+  &:nth-of-type(1) {
+    animation-delay: 0.15s;
+  }
+  &:nth-of-type(2) {
+    animation-delay: 0.3s;
+  }
+  &:nth-of-type(3) {
+    animation-delay: 0.45s;
+  }
 
   &:last-child {
     margin-bottom: 0;
@@ -178,7 +201,46 @@ const LinkItem = styled.li`
   a {
     color: inherit;
     text-decoration: none;
-    transition: color 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    padding: 2px 0;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  a::after {
+    content: '→';
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: ${COLORS.black};
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.25s ease;
+  }
+
+  a:hover {
+    color: ${COLORS.black};
+  }
+
+  a:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  a:hover::before {
+    transform: scaleX(1);
   }
 
   @media (max-width: 768px) {
